@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tus Flores Amarillas 🌻</title>
+  <style>
+    :root {
+      --bg-color: #fefae0;
+      --text-color: #333;
+      --yellow-flower: #f39c12;
+      --yellow-center: #d35400;
+      --stem-green: #27ae60;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    /* Pantalla de inicio al entrar */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #b7950b;
+      margin-bottom: 20px;
+    }
+
+    p.intro {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      max-width: 600px;
+      color: #555;
+    }
+
+    .scroll-down {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #888;
+      animation: bounce 2s infinite;
+    }
+
+    /* Secciones individuales para cada flor al deslizar */
+    .flower-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* Tarjeta que contiene la flor y la razón */
+    .flower-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 40px 25px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .reason-text {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    /* Estructura gráfica de la flor */
+    .flower {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .petal {
+      position: absolute;
+      width: 28px;
+      height: 70px;
+      background-color: var(--yellow-flower);
+      border-radius: 50px;
+      top: 5px;
+      transform-origin: bottom center;
+    }
+
+    .petal:nth-child(1) { transform: rotate(0deg); }
+    .petal:nth-child(2) { transform: rotate(45deg); }
+    .petal:nth-child(3) { transform: rotate(90deg); }
+    .petal:nth-child(4) { transform: rotate(135deg); }
+    .petal:nth-child(5) { transform: rotate(180deg); }
+    .petal:nth-child(6) { transform: rotate(225deg); }
+    .petal:nth-child(7) { transform: rotate(270deg); }
+    .petal:nth-child(8) { transform: rotate(315deg); }
+
+    .flower-center {
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      background-color: var(--yellow-center);
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .stem {
+      width: 8px;
+      height: 60px;
+      background-color: var(--stem-green);
+      border-radius: 4px;
+      margin-top: -10px;
+    }
+
+    /* Animación del indicador de scroll */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5deg); }
+    }
+
+    footer {
+      padding: 50px 20px;
+      text-align: center;
+      font-size: 1.3rem;
+      color: #b7950b;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. PANTALLA INICIAL (Mensaje de bienvenida) -->
+  <section class="hero-section">
+    <h1>🌻 Para ti 🌻</h1>
+    <p class="intro">
+      Sé que es 21 de septiembre y, aunque estemos lejos, no quería que te quedases sin las tuyas. 
+      Mis flores no son físicas, pero cada una de ellas contiene el porqué estoy contigo.
+    </p>
+    <div class="scroll-down">
+      Desliza hacia abajo para ver tus flores ↓
+    </div>
+  </section>
+
+  <!-- 2. CADA FLOR APARECE CON SU RAZÓN AL DESLIZAR -->
+
+  <!-- Flor 1 -->
+  <section class="flower-section">
+    <div class="flower-card">
+      <div class="flower">
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="flower-center"></div>
+      </div>
+      <div class="stem"></div>
+      <p class="reason-text">"Por cómo me haces sonreír incluso en los días más difíciles."</p>
+    </div>
+  </section>
+
+  <!-- Flor 2 -->
+  <section class="flower-section">
+    <div class="flower-card">
+      <div class="flower">
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="flower-center"></div>
+      </div>
+      <div class="stem"></div>
+      <p class="reason-text">"Por la paz que me transmite hablar contigo sin importar la distancia."</p>
+    </div>
+  </section>
+
+  <!-- Flor 3 -->
+  <section class="flower-section">
+    <div class="flower-card">
+      <div class="flower">
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="flower-center"></div>
+      </div>
+      <div class="stem"></div>
+      <p class="reason-text">"Por la forma en la que me apoyas en cada uno de mis proyectos."</p>
+    </div>
+  </section>
+
+  <!-- Flor 4 -->
+  <section class="flower-section">
+    <div class="flower-card">
+      <div class="flower">
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="flower-center"></div>
+      </div>
+      <div class="stem"></div>
+      <p class="reason-text">"Por todos los momentos bonitos que hemos construido juntos y los que quedan."</p>
+    </div>
+  </section>
+
+  <!-- Flor 5 -->
+  <section class="flower-section">
+    <div class="flower-card">
+      <div class="flower">
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+        <div class="flower-center"></div>
+      </div>
+      <div class="stem"></div>
+      <p class="reason-text">"Porque simplemente haces que mi vida sea mucho mejor con tan solo estar en ella."</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Te quiero mucho </p>
+  </footer>
+
+</body>
+</html>
 
